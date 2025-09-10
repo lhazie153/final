@@ -1,21 +1,311 @@
-/* Custom CSS for Drukains Today */
+/* Custom CSS for Drukains Today - New Color Scheme */
 
 :root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --success-color: #198754;
-    --info-color: #0dcaf0;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
+    /* 1. Backgrounds */
+    --main-background: #F5F0E1;
+    --section-background-light: #FAF5EE;
+    --section-background-pinkish: #FFE6E6;
+    --accent-background: #F2F2F2;
+
+    /* 2. Headings */
+    --heading-main: #A60F21;
+    --heading-sub: #C62828;
+    --heading-minor: #000000;
+
+    /* 3. Paragraph Text */
+    --text-body: #5A4632;
+    --text-secondary: #7A6B58;
+    --link-color: #B71C1C;
+    --link-hover: #D32F2F;
+    --text-strong: #000000;
+
+    /* 4. Buttons */
+    --button-primary-bg: #A60F21;
+    --button-primary-text: #FFFFFF;
+    --button-primary-hover-bg: #B71C1C;
+
+    --button-secondary-bg: #F5F0E1;
+    --button-secondary-text: #A60F21;
+    --button-secondary-border: #A60F21;
+    --button-secondary-hover-bg: #A60F21;
+    --button-secondary-hover-text: #FFFFFF;
+
+    --button-accent-bg: #5A4632;
+    --button-accent-text: #FFFFFF;
+
+    /* 5. Navigation Bar */
+    --navbar-background: #EDE1D2;
+    --navbar-text: #000000;
+    --navbar-hover-active: #D32F2F;
+    --navbar-current-indicator: #000000;
+
+    /* 6. Footer */
+    --footer-background: #D7C1AA;
+    --footer-text: #FFFFFF;
+    --footer-link: #A60F21;
+    --footer-link-hover: #D32F2F;
+    --footer-small-print: #B0A18B;
+
+    /* 7. Cards / Sections / Containers */
+    --card-background: #FFFFFF;
+    --card-border-shadow-tint: #FFE6E6;
+    --card-shadow-color: #EDE1D2;
+    --card-heading: #A60F21;
+    --card-body-text: #5A4632;
+    --card-icon-accent: #000000;
+    --card-icon-accent-secondary: #7A6B58;
+
+    /* General */
+    --white: #FFFFFF;
+    --black: #000000;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background-color: var(--main-background);
+    color: var(--text-body);
     padding-top: 76px; /* Account for fixed navbar */
 }
+
+/* Headings */
+h1, h2 {
+    color: var(--heading-main);
+}
+
+h3, h4 {
+    color: var(--heading-sub);
+}
+
+h5, h6, label {
+    color: var(--heading-minor);
+}
+
+/* Paragraph Text */
+p {
+    color: var(--text-body);
+}
+
+small {
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--link-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+strong {
+    color: var(--text-strong);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--navbar-background) !important;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: var(--black) !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--navbar-hover-active) !important;
+}
+
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid var(--navbar-current-indicator);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--button-primary-bg) !important;
+    color: var(--button-primary-text) !important;
+    border-color: var(--button-primary-bg) !important;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-primary-hover-bg) !important;
+    border-color: var(--button-primary-hover-bg) !important;
+}
+
+.btn-outline-light {
+    background-color: var(--button-secondary-bg) !important;
+    color: var(--button-secondary-text) !important;
+    border-color: var(--button-secondary-border) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--button-secondary-hover-bg) !important;
+    color: var(--button-secondary-hover-text) !important;
+    border-color: var(--button-secondary-hover-bg) !important;
+}
+
+.btn-light {
+    background-color: var(--button-accent-bg) !important;
+    color: var(--button-accent-text) !important;
+    border-color: var(--button-accent-bg) !important;
+}
+
+.btn-light:hover {
+    background-color: var(--button-accent-bg) !important;
+    color: var(--button-accent-text) !important;
+    border-color: var(--button-accent-bg) !important;
+    opacity: 0.9;
+}
+
+/* Cards / Sections / Containers */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-shadow-tint);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), 0 0 0 0.25rem var(--card-shadow-color);
+}
+
+.card-header {
+    background-color: var(--card-background);
+    color: var(--card-heading);
+    border-bottom: 1px solid var(--accent-background);
+}
+
+.card-body {
+    color: var(--card-body-text);
+}
+
+.card-title {
+    color: var(--card-heading);
+}
+
+/* Specific card headers based on original Bootstrap classes */
+.card-header.bg-primary {
+    background-color: var(--button-primary-bg) !important;
+    color: var(--button-primary-text) !important;
+}
+
+.card-header.bg-info {
+    background-color: var(--section-background-pinkish) !important;
+    color: var(--heading-sub) !important;
+}
+
+.card-header.bg-warning {
+    background-color: var(--section-background-light) !important;
+    color: var(--heading-minor) !important;
+}
+
+.card-header.bg-success {
+    background-color: var(--button-accent-bg) !important;
+    color: var(--button-accent-text) !important;
+}
+
+/* Alerts (used for messages and reminders) */
+.alert-info {
+    background-color: var(--section-background-pinkish) !important;
+    color: var(--text-body) !important;
+    border-color: var(--card-border-shadow-tint) !important;
+}
+
+.alert-warning {
+    background-color: var(--section-background-light) !important;
+    color: var(--text-body) !important;
+    border-color: var(--accent-background) !important;
+}
+
+.alert-success {
+    background-color: var(--button-accent-bg) !important;
+    color: var(--button-accent-text) !important;
+    border-color: var(--button-accent-bg) !important;
+}
+
+.alert-danger {
+    background-color: var(--heading-main) !important;
+    color: var(--white) !important;
+    border-color: var(--heading-main) !important;
+}
+
+/* Icons */
+.fas {
+    color: var(--card-icon-accent);
+}
+
+/* Footer (placeholder, assuming it will be added later) */
+footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: var(--footer-link);
+}
+
+footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+footer small {
+    color: var(--footer-small-print);
+}
+
+/* General Bootstrap overrides for color consistency */
+.bg-primary {
+    background-color: var(--button-primary-bg) !important;
+}
+
+.text-primary {
+    color: var(--button-primary-bg) !important;
+}
+
+.bg-info {
+    background-color: var(--section-background-pinkish) !important;
+}
+
+.text-info {
+    color: var(--heading-sub) !important;
+}
+
+.bg-warning {
+    background-color: var(--section-background-light) !important;
+}
+
+.text-warning {
+    color: var(--heading-minor) !important;
+}
+
+.bg-success {
+    background-color: var(--button-accent-bg) !important;
+}
+
+.text-success {
+    color: var(--button-accent-text) !important;
+}
+
+.bg-secondary {
+    background-color: var(--text-secondary) !important;
+}
+
+.text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.bg-dark {
+    background-color: var(--text-strong) !important;
+}
+
+.text-dark {
+    color: var(--text-strong) !important;
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* Existing styles from original styles.css */
 
 /* Navigation Enhancements */
 .navbar-brand {
@@ -37,7 +327,6 @@ body {
 
 /* Card Enhancements */
 .card {
-    border: none;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -77,17 +366,17 @@ body {
 /* Post Cards */
 .post-card {
     margin-bottom: 1.5rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--button-primary-bg);
     transition: all 0.3s ease;
 }
 
 .post-card:hover {
-    border-left-color: var(--success-color);
+    border-left-color: var(--button-accent-bg);
 }
 
 .post-meta {
     font-size: 0.875rem;
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
@@ -95,7 +384,7 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--dark-color);
+    color: var(--heading-minor);
 }
 
 .post-content {
@@ -108,14 +397,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid var(--accent-background);
 }
 
 /* Vote Button */
 .vote-btn {
-    background: linear-gradient(45deg, var(--primary-color), var(--info-color));
+    background: var(--button-primary-bg);
     border: none;
-    color: white;
+    color: var(--button-primary-text);
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     font-weight: 500;
@@ -127,16 +416,17 @@ body {
 .vote-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    background: var(--button-primary-hover-bg);
 }
 
 .vote-btn:disabled {
-    background: var(--secondary-color);
+    background: var(--text-secondary);
     cursor: not-allowed;
     transform: none;
 }
 
 .vote-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -158,24 +448,22 @@ body {
 }
 
 .grade-badge {
-    background: linear-gradient(45deg, var(--info-color), var(--primary-color));
+    background: var(--heading-sub);
 }
 
 .role-badge {
-    background: linear-gradient(45deg, var(--success-color), var(--warning-color));
+    background: var(--button-accent-bg);
 }
 
 /* Modal Enhancements */
 .modal-content {
-    border: none;
     border-radius: 1rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
 .modal-header {
-    border-bottom: 1px solid #dee2e6;
-    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
-    color: white;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
     border-radius: 1rem 1rem 0 0;
 }
 
@@ -186,13 +474,13 @@ body {
 /* Form Enhancements */
 .form-control, .form-select {
     border-radius: 0.5rem;
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--accent-background);
     transition: all 0.3s ease;
 }
 
 .form-control:focus, .form-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    border-color: var(--button-primary-bg);
+    box-shadow: 0 0 0 0.2rem rgba(166, 15, 33, 0.25);
     transform: translateY(-1px);
 }
 
@@ -209,60 +497,36 @@ body {
     transform: translateY(-1px);
 }
 
-.btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--info-color));
-    border: none;
-}
-
-.btn-success {
-    background: linear-gradient(45deg, var(--success-color), #20c997);
-    border: none;
-}
-
-.btn-warning {
-    background: linear-gradient(45deg, var(--warning-color), #fd7e14);
-    border: none;
-}
-
-.btn-danger {
-    background: linear-gradient(45deg, var(--danger-color), #e91e63);
-    border: none;
-}
-
-/* Loading Spinner */
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
-}
-
 /* Admin Dashboard */
 .admin-stats .card {
-    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
-    color: white;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
     border: none;
 }
 
 .admin-stats .card:nth-child(2) .card {
-    background: linear-gradient(135deg, var(--success-color), #20c997);
+    background-color: var(--button-accent-bg);
 }
 
 .admin-stats .card:nth-child(3) .card {
-    background: linear-gradient(135deg, var(--info-color), var(--primary-color));
+    background-color: var(--section-background-pinkish);
+    color: var(--heading-sub);
 }
 
 .admin-stats .card:nth-child(4) .card {
-    background: linear-gradient(135deg, var(--warning-color), #fd7e14);
+    background-color: var(--section-background-light);
+    color: var(--heading-minor);
 }
 
 /* User List */
 .user-item {
     padding: 1rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--accent-background);
     transition: all 0.3s ease;
 }
 
 .user-item:hover {
-    background-color: #f8f9fa;
+    background-color: var(--section-background-light);
     transform: translateX(5px);
 }
 
@@ -291,21 +555,49 @@ body {
     }
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support (adjusting for new palette) */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1a1a1a;
-        color: #ffffff;
+        background-color: #333333;
+        color: var(--white);
     }
     
     .card {
-        background-color: #2d2d2d;
-        color: #ffffff;
+        background-color: #444444;
+        color: var(--white);
     }
     
     .modal-content {
-        background-color: #2d2d2d;
-        color: #ffffff;
+        background-color: #444444;
+        color: var(--white);
+    }
+    
+    .navbar {
+        background-color: #222222 !important;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: var(--white) !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--link-hover) !important;
+    }
+
+    .card-header.bg-primary,
+    .card-header.bg-success,
+    .card-header.bg-info,
+    .card-header.bg-warning {
+        color: var(--white) !important;
+    }
+
+    .alert-info,
+    .alert-warning,
+    .alert-success,
+    .alert-danger {
+        color: var(--white) !important;
     }
 }
 
@@ -313,7 +605,7 @@ body {
 .btn:focus,
 .form-control:focus,
 .form-select:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--button-primary-bg);
     outline-offset: 2px;
 }
 
@@ -328,7 +620,7 @@ body {
     .card {
         break-inside: avoid;
         box-shadow: none !important;
-        border: 1px solid #dee2e6 !important;
+        border: 1px solid var(--accent-background) !important;
     }
 }
 
@@ -359,18 +651,5 @@ body {
     font-weight: 500;
 }
 
-.alert-success {
-    background: linear-gradient(45deg, var(--success-color), #20c997);
-    color: white;
-}
 
-.alert-danger {
-    background: linear-gradient(45deg, var(--danger-color), #e91e63);
-    color: white;
-}
-
-.alert-info {
-    background: linear-gradient(45deg, var(--info-color), var(--primary-color));
-    color: white;
-}
 
